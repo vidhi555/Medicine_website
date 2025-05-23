@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Medicine Website</title>
+
+  <script src="angular.min.js"></script>
+    <link rel="stylesheet" href="bootstrap-5.3.5-dist/css/bootstrap.min.css">
+    <script src="bootstrap-5.3.5-dist/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <script src="angular.min.js"></script>
+    <script src="data.js"></script>
+</head>
+<body ng-app="myApp" ng-controller="myCtrl">
+  <nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">Medicine Store</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="home.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="product.html">Product</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="aboutUs.html">About Us</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="contact.html">Contact </a>
+          </li>
+         
+    
+         
+        </ul>
+        <form class="d-flex" role="search">
+          <input class="form-control me-2" ng-model="searchText" type="search" placeholder="Search" aria-label="Search">
+         
+        </form>
+        <ul class="navbar-nav ">
+            <li class="nav-item">
+                <a class="nav-link" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">cart({{cart.length}})</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="login.html" >Login</a>
+            </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <!-- Body -->
+  <div class="bcontainer">
+    <h1 id="home-head"><span style="color: brown;">Smart</span> <br> Medical Store - ABOUT US</h1>
+    <input type="submit" id="btn1" class="btn btn-secondary" value="See More >>">
+  </div>
+  <!-- Body end -->
+
+  <!-- About Medicine -->
+  <div class="container aboutAs">
+    <h2 class="aboutHead">About <span style="font-family: 'Times New Roman', Times, serif;font-size: 40px;color: rgb(170, 12, 12);">MEDICINE</span></h2>
+    <img  class="aboutHeadImg" width="70%" src="image/R.png" alt="">
+    <div class="row">
+        <div class="col-lg-6" >
+          <img class="aboutImg" src="image/medicine.webp" alt="" srcset="">
+        </div>
+        <div class="col-lg-6">
+          <p class="aboutP">=> Medicine is the science and practice of caring for patients, managing the diagnosis, prognosis, prevention, treatment, palliation of their injury or disease, and promoting their health.</p>
+          <p>=> Medicine encompasses a variety of health care practices evolved to maintain and restore health by the prevention and treatment of illness. <br> Contemporary medicine applies biomedical sciences, biomedical research, genetics, and medical technology to diagnose, treat, and prevent injury and disease, typically through pharmaceuticals or surgery, but also through therapies as diverse as psychotherapy, external splints and traction, medical devices, biologics, and ionizing radiation, amongst others.</p>
+        </div>
+    </div>
+  </div>
+  <!-- About Medicine -->
+   <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+        <div class="offcanvas-header">
+          <h2 class="offcanvas-title" id="offcanvasExampleLabel">Cart</h2>
+          <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+            <table align="center" class="table table-striped-columns">
+            
+                <tr>
+                    <th>Medicine</th>
+                    <th>Name</th>
+                    <th>Quantity</th>
+                    <th>Price</th>
+                    <th>Total</th>
+                </tr>
+                <tr ng-repeat="c in cart">
+                    <td><img ng-src="{{c.image}}" width="50" height="50"></td>
+                    <td>{{c.name}}</td>
+                    <td>
+                        <button style="border-radius: 40%;padding-bottom: 9px;font-weight: bold;text-align: center; " ng-click="inc(c)">+</button>
+                        {{c.qty}} 
+                        <button style="border-radius: 40%;padding-bottom: 9px;font-weight: bold;text-align: center;  " ng-click="dec(c)">-</button>
+                    </td>
+                    <td>{{c.price}}</td>
+                    <td>{{c.price * c.qty}}</td>
+                </tr>
+                </table>
+                <h3>Grand Total: <span style="color: green;">{{gTotal(c)}}</span></h3>
+                <div ng-if="cart.length === 0">
+                  <p>Your cart is empty.</p>
+                </div>
+        </div>
+      </div>
+      <script src="data.js"></script>
+
+
+
+  <footer>
+    <div class="row">
+      <div class="col-md-4">
+        <a href="#">Home</a>
+        <a href="#">About Us</a>
+        <a href="#">Contact</a>
+      </div>
+      <div class="col-md-4">
+        <a href="#">Medicines</a>
+        <a href="#">Health Tips</a>
+        <a href="#">Blogs</a>
+      </div>
+      <div class="col-md-4">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Use</a>
+        <a href="#">Support</a>
+      </div>
+    </div>
+  </footer>
+  
+</body>
+</html>

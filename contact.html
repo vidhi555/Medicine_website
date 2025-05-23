@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Medicine Website</title>
+
+  <script src="angular.min.js"></script>
+    <link rel="stylesheet" href="bootstrap-5.3.5-dist/css/bootstrap.min.css">
+    <script src="bootstrap-5.3.5-dist/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <script src="angular.min.js"></script>
+   
+</head>
+<style>
+    body{
+        background-color: aliceblue;
+
+    }
+    .container{
+        width: 50%;
+        height: 50%;
+        background-color: rgb(169, 203, 247);
+        margin-top:50px ;
+        padding-top: 30px;
+        padding-bottom: 30px;
+        cursor: pointer;
+        margin-bottom: 50px;
+        border: none;
+        border-radius: 10px;
+    }
+    .container div{
+        padding-top: 20px;
+        font-size: 30px;
+    }
+</style>
+<body ng-app="myApp" ng-controller="myCtrl">
+  <nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">Medicine Store</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="home.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="product.html">Product</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="aboutUs.html">About Us</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="contact.html">Contact </a>
+          </li>
+         
+    
+         
+        </ul>
+      
+        <ul class="navbar-nav ">
+            <li class="nav-item">
+                <a class="nav-link" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">cart({{cart.length}})</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="login.html">Login</a>
+            </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <!-- Body -->
+  <div class="container">
+    <form onsubmit="return false">
+        <div>
+            <h1 style="text-align: center;color: rgb(255, 255, 255);text-shadow: 2px 2px 8px #000000;font-size: 50px;font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">Contact Us</h1>
+        </div>
+        <div>
+            <label style="color: white;text-shadow: 2px 2px #000000;"> Your Name: </label>
+            <input type="text" id="nm" class="form-control" placeholder="Enter name here...">
+        </div>
+       <div>
+            <label style="color: white;text-shadow: 2px 2px #000000;"> Your Email Id: </label>
+            <input type="email" id="enm" class="form-control" placeholder="Enter Email-id here...">
+        </div>
+        <div>
+            <label style="color: white;text-shadow: 2px 2px #000000;"> Message: </label>
+            <textarea name="msg" id="msg" rows="7" class="form-control" placeholder="enter your Message here..."></textarea>
+        </div>
+        <div>
+            <input type="submit" ng-click="onc()" value="SUBMIT" class="btn btn-primary form-control">
+        </div>
+    </form>
+  </div>
+ <script src="data.js"></script>
+  <!-- Body end -->
+   <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+        <div class="offcanvas-header">
+          <h2 class="offcanvas-title" id="offcanvasExampleLabel">Cart</h2>
+          <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+            <table align="center" class="table table-striped-columns">
+            
+                <tr>
+                    <th>Medicine</th>
+                    <th>Name</th>
+                    <th>Quantity</th>
+                    <th>Price</th>
+                    <th>Total</th>
+                </tr>
+                <tr ng-repeat="c in cart">
+                    <td><img ng-src="{{c.image}}" width="50" height="50"></td>
+                    <td>{{c.name}}</td>
+                    <td>
+                        <button style="border-radius: 40%;padding-bottom: 9px;font-weight: bold;text-align: center; " ng-click="inc(c)">+</button>
+                        {{c.qty}} 
+                        <button style="border-radius: 40%;padding-bottom: 9px;font-weight: bold;text-align: center;  " ng-click="dec(c)">-</button>
+                    </td>
+                    <td>{{c.price}}</td>
+                    <td>{{c.price * c.qty}}</td>
+                </tr>
+                </table>
+                <h3>Grand Total: <span style="color: green;">{{gTotal(c)}}</span></h3>
+                <div ng-if="cart.length === 0">
+                  <p>Your cart is empty.</p>
+                </div>
+        </div>
+      </div>
+      <script src="data.js"></script>
+
+
+
+
+
+   <!-- Product end -->
+
+  <footer>
+    <div class="row">
+      <div class="col-md-4">
+        <a href="#">Home</a>
+        <a href="#">About Us</a>
+        <a href="#">Contact</a>
+      </div>
+      <div class="col-md-4">
+        <a href="#">Medicines</a>
+        <a href="#">Health Tips</a>
+        <a href="#">Blogs</a>
+      </div>
+      <div class="col-md-4">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Use</a>
+        <a href="#">Support</a>
+      </div>
+    </div>
+  </footer>
+  
+</body>
+</html>

@@ -1,0 +1,128 @@
+[
+    {
+        "id":1,
+        "name":"paracetamol",
+        "price":500,
+        "description":"Used to pain releife",
+        "image":"image/Paracetamol.jpg"
+    },
+    {
+        "id":2,
+        "name":"DOLO",
+        "price":500,
+        "description":"Used to pain releife",
+        "image":"image/Aspirin.jpg"
+    },
+    {
+        "id":3,
+        "name":"ABC",
+        "price":900,
+        "description":"Used to pain releife",
+        "image":"image/Cetirizine.jpg"
+    },
+    {
+        "id":4,
+        "name":"Aspirin",
+        "price":200,
+        "description":"Used to pain releife",
+        "image":"image/Chlorpheniramine.jpg"
+    },
+    {
+        "id":5,
+        "name":"paracetamol",
+        "price":100,
+        "description":"Used to pain releife",
+        "image":"image/Ibuprofen.jpg"
+    },
+    {
+        "id":2,
+        "name":"DOLO",
+        "price":500,
+        "description":"Used to pain releife",
+        "image":"image/Aspirin.jpg"
+    },
+    {
+        "id":3,
+        "name":"ABC",
+        "price":900,
+        "description":"Used to pain releife",
+        "image":"image/Cetirizine.jpg"
+    },
+    {
+        "id":4,
+        "name":"Aspirin",
+        "price":200,
+        "description":"Used to pain releife",
+        "image":"image/Chlorpheniramine.jpg"
+    },
+    {
+        "id":5,
+        "name":"paracetamol",
+        "price":100,
+        "description":"Used to pain releife",
+        "image":"image/Ibuprofen.jpg"
+    },
+    {
+        "id":1,
+        "name":"paracetamol",
+        "price":500,
+        "description":"Used to pain releife",
+        "image":"image/Paracetamol.jpg"
+    },
+    {
+        "id":2,
+        "name":"DOLO",
+        "price":500,
+        "description":"Used to pain releife",
+        "image":"image/Aspirin.jpg"
+    },
+    {
+        "id":3,
+        "name":"ABC",
+        "price":900,
+        "description":"Used to pain releife",
+        "image":"image/Cetirizine.jpg"
+    },
+    {
+        "id":4,
+        "name":"Aspirin",
+        "price":200,
+        "description":"Used to pain releife",
+        "image":"image/Chlorpheniramine.jpg"
+    },
+    {
+        "id":5,
+        "name":"paracetamol",
+        "price":100,
+        "description":"Used to pain releife",
+        "image":"image/Ibuprofen.jpg"
+    },
+    {
+        "id":2,
+        "name":"DOLO",
+        "price":500,
+        "description":"Used to pain releife",
+        "image":"image/Aspirin.jpg"
+    },
+    {
+        "id":3,
+        "name":"ABC",
+        "price":900,
+        "description":"Used to pain releife",
+        "image":"image/Cetirizine.jpg"
+    },
+    {
+        "id":4,
+        "name":"Aspirin",
+        "price":200,
+        "description":"Used to pain releife",
+        "image":"image/Chlorpheniramine.jpg"
+    },
+    {
+        "id":5,
+        "name":"paracetamol",
+        "price":100,
+        "description":"Used to pain releife",
+        "image":"image/Ibuprofen.jpg"
+    }
+]
